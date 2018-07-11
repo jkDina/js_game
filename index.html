@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <script src="./js/app.js"></script>
+  <script src="./game.js"></script>
+  <script>
+ const schemas = [
+    [
+        "     v         v       ",
+        "                       ",
+        "                       ",
+        "                       ",
+        "                       ",
+        "  |xxx       w         ",
+        " xo                 o  ",
+        " x                = x  ",
+        "  x      o   o o    x  ",
+        "  x o@   xx* xxxxx  x  ",
+        "  xxxxx             x  ",
+        "      x!!!!!!!!!!!!!x  ",
+        "      xxxxxxxxxxxxxxx  ",
+        "                       "
+    ],
+    [
+        "     v                 ",
+        "                       ",
+        "                       ",
+        "                       ",
+        "                       ",
+        "  |                    ",
+        "  o                 o  ",
+        "  x                 x  ",
+        "  x          o o    x  ",
+        "  x  @       xxxxx  x  ",
+        "  xxxxx             x  ",
+        "   o  x!!!!!!!!!!!!!x  ",
+        "      xxxxxxxxxxxxxxx  ",
+        "  xx                   "
+    ],
+    [
+        "                   o   ",
+        "                       ",
+        "                       ",
+        "    o                  ",
+        "    x      |xx!xx      ",
+        "         x             ",
+        "                     xx",
+        "                       ",
+        "    o                  ",
+        "                       ",
+        "               xxx o   ",
+        "                   x   ",
+        "                       ",
+        "       xxx  |          ",
+        "           o           ",
+        " @         x           ",
+        "xxx  o                 ",
+        "     x                 "
+    ],
+];
+const actorDict = {
+    '@': Player,
+    'v': FireRain,
+    '=': HorizontalFireball,
+    'o': Coin
+};
+const parser = new LevelParser(actorDict);
+runGame(schemas, parser, DOMDisplay)
+    .then(() => alert('Вы выиграли приз!'));
+</script>
+
+
+</body>
+</html>
